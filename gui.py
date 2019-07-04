@@ -15,7 +15,7 @@ def run(metar_filename):
     # Create the root Tk()
     root = tk.Tk()
     # Set the title to your group's name Project A 1, 2, 3, etc.
-    root.title("COSC505 - Project A")
+    root.title("COSC505 - Project A 9")
     # Create two frames, the list is on top of the Canvas
     list_frame = tk.Frame(root)
     draw_frame = tk.Frame(root)
