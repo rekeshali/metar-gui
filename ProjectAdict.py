@@ -3,7 +3,7 @@
 
 
 
-def METARdict(args):
+def METARdict():
     #initializes dictionaries and reads METAR file
     fin = open(input("Input desired METAR file as a text file(filename.txt): "))
     innerdict = {}
@@ -61,5 +61,5 @@ def METARdict(args):
     return maindict
 
 
-f = METARdict('METAR.txt')
+f = METARdict()
 print(f)
