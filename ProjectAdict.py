@@ -1,8 +1,8 @@
 #Tristan Wall: twall4
+#COSC-505: Project A, Dictionary creatation
 #This is a function that converts METAR txt files into dictionaries
 
-
-
+#Function is setup to take a .txt file as input
 def METARdict():
     #initializes dictionaries and reads METAR file
     fin = open(input("Input desired METAR file as a text file(filename.txt): "))
