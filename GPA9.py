@@ -8,7 +8,7 @@ def METARdict(fname):
     innerdict = {}
     maindict = {}
     # Carries out dictionary population for each METAR line
-    fin = open(fname)
+    fin = open(fname, "r")
     for line in fin:
         parts = line.split(" ")
         airport = parts[0]
