@@ -91,7 +91,7 @@ def run(metar_filename):
     dropdown.grid(row=0,column=1)
 
     ###############################################################################################
-    # Routines for drawing all the necessary objects on the display
+    # (rborden4 & rali1) Routines for drawing all the necessary objects on the display
     # (rborden4) Airport name
     def draw_name(name):
         x, y = 100, 100
