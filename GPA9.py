@@ -1,5 +1,6 @@
 # Group Project A
 # Team 9: rali1, twall4, hortizme, rborden4
+# Display METARS data from a text file onto GUI.
 import tkinter as tk
 
 # (twall4 & hortizme) Constructs dict from metars file
