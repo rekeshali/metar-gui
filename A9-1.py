@@ -8,18 +8,18 @@ def METARdict(fname):
     # Initializes dictionaries
     innerdict = {}
     maindict = {}
-    # Carries out dictionary population for each METAR line
+    # Carry out dictionary population for each METAR line
     fin = open(fname, "r")
     for line in fin:
         parts = line.split(" ")
         airport = parts[0]
         for i in range(len(parts)):
-            # (twall4) Parses time data into Date and UTC time
+            # (twall4) Parse time data into Date and UTC time
             if parts[i][-1:] == 'Z' and i > 0:
                 parts[i] = parts[i][:-1]
                 date = int(parts[i][:2])
                 UTC = int(parts[i][2:])
-            # (twall4) Parses wind speed information
+            # (twall4) Parse wind speed information
             elif parts[i][-2:] == 'KT' and i > 0:
                 temp_wind = parts[i][:-2]
                 wind_dir = int(parts[i][0:3])
@@ -28,7 +28,7 @@ def METARdict(fname):
                     gust = int(temp_wind[-2:])
                 else:
                     gust = 0
-            # (twall4) Parses Visibility data
+            # (twall4) Parse Visibility data
             elif parts[i][-2:] == 'SM' and i > 0 :
                 temp_vis = parts[i][:-2]
                 if '/' in temp_vis:
@@ -36,12 +36,12 @@ def METARdict(fname):
                     vis = int(fract_vis[0])/int(fract_vis[1])
                 else:
                     vis = int(temp_vis)
-            # (hortizme) Parses Temperature and Dew point data 
+            # (hortizme) Parse Temperature and Dew point data 
             elif '/' in parts[i] and i > 0 and not 'A' in parts[i]:
                 tempOVERdew = parts[i].split('/')
                 temperature = int(tempOVERdew[0])
                 dewpoint =  int(tempOVERdew[1])
-            # (hortizme) Parses Altitude data 
+            # (hortizme) Parse Altitude data 
             elif parts[i][0] == 'A' and i > 0 and len(parts[i]) == 5:
                 altimeter = int(parts[i][1:3]) + int(parts[i][3:])/100 
         # (hortizme) Fill inner dictionary, then main dict
@@ -182,7 +182,7 @@ def run(metar_filename):
         # Get name of selection
         name_port = listvar.get() # name of selected airport
         data_port = data_all[name_port] # data from selected airport
-        # Begin updating the display
+        # Update display
         draw_name(name_port)
         draw_date(data_port['utc'])
         draw_wind(data_port['wind_speed'], data_port['wind_gust'], data_port['wind_dir'])
