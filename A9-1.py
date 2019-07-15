@@ -1,11 +1,11 @@
-# Group Project A
-# Team 9: rali1, twall4, hortizme, rborden4
+# COSC 505: Project 1
+# Group A9: rali1, twall4, hortizme, rborden4
 # Display METARS data from a text file onto GUI.
 import tkinter as tk
 
-# (twall4 & hortizme) Constructs dict from metars file
+# (twall4 & hortizme) Construct dict from metars file
 def METARdict(fname):
-    # Initializes dictionaries
+    # Initialize dictionaries
     innerdict = {}
     maindict = {}
     # Carry out dictionary population for each METAR line
